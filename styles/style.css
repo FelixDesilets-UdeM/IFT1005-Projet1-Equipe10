@@ -1,4 +1,12 @@
 /* Équipe 10: Félix Désilets (20377097), ...*/
 body {
-  background-color: blueviolet;
+  background-color: aliceblue;
+}
+
+nav {
+  text-align: center;
+}
+
+nav>a:hover {
+  font-weight: bold;
 }
