@@ -2,8 +2,11 @@
 :root {
   --beige-creme: #FAF6F0;
   --beige-sable: #E8DFD0;
+  --noir-charbon: #2F2F2F;
   --orange-terracota: #C4694F;
   --vert-sage: #8A9A7B;
+
+  scrollbar-color: var(--vert-sage) var(--beige-creme);  
 }
 
 body {
@@ -12,7 +15,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: var(--beige-creme);
-  color: #2F2F2F;
+  color: var(--noir-charbon);
   font-family: 'Lato', sans-serif;
   line-height: 1.6;
 }
@@ -22,31 +25,52 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 16px 24px;
+  background-color: var(--beige-creme);
   border-bottom: 1px solid var(--beige-sable);
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  margin: 20px 0px 10px 0px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+ font-size: 1.8rem
+}
+
+h3 {
+  font-size: 1.5rem;
 }
 
 main {
   flex: 1;
-  margin: 0;
+  margin: 0 5%;
   font-family: 'Lato', sans-serif;
 }
 
-main h2 {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 1.8rem;
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 10px;
+main a {
+  color: var(--orange-terracota);
+}
+
+main a:hover {
+  color: #8B3E2F;
 }
 
 nav { 
   display: flex;
+  flex-direction: row;
   gap: 40px;
 }
 
 nav a {
   text-decoration: none;
-  color: #2F2F2F;
+  color: var(--noir-charbon);
 }
 
 nav a:hover {
@@ -60,16 +84,6 @@ nav a.active {
 
 table caption {
   font-weight: bold;
-}
-
-/* TODO: Passer en flow rangée sur mobile.*/
-@media (max-width: 480px) {
-  .grille {
-    display: grid;
-    column-gap: 64px;
-    grid-auto-flow: row;
-    justify-content: center;
-  }
 }
 
 .grille {
@@ -93,7 +107,7 @@ table caption {
 
 .droits {
   background-color: var(--beige-sable);
-  color: #2F2F2F;
+  color: var(--noir-charbon);
   text-align: center;
   padding: 10px;
   font-size: 0.9rem;
@@ -107,22 +121,26 @@ table caption {
 .rangée {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: center;
   justify-content: center;
 }
 
 #spacer {
-  background-color:gray;
+  background-color: gray;
   height: 10px;
   margin: 20px 35%;
   border-radius: 10px;
   opacity: 0.3;
   border: none;
-}				
+}
+
 
 /* Accueil */
 .boite {
   background-color: var(--beige-sable);
-  flex:1;
+  flex: 1;
   padding: 4% 4% 3% 4%;
   text-align: center;
   border-radius: 10px;
@@ -131,7 +149,7 @@ table caption {
 .boite p {
   text-align: center;
   margin: 40px 0 0 0;
-  color: #2F2F2F;
+  color: var(--noir-charbon);
   opacity: 1;
   font-size: 1.5rem;
   font-family: 'Playfair Display', serif;
@@ -140,7 +158,7 @@ table caption {
 
 #a-propos {
   background-color: var(--vert-sage);
-  color: #2F2F2F;
+  color: var(--noir-charbon);
   text-align: center;
   padding: 20px 0;
   margin:0;
@@ -199,40 +217,21 @@ table caption {
   transform: translateY(2px);
 }
 
+
 /* Boutique */
+.page-boutique section {
+  text-align: center;
+}
+
 .boutique-paragraphe {
   height: max-content;
   width: min-content;
   min-width: 20vw;
 }
 
-.page-boutique h2 {
-  text-align: center;
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 10px;
-}
-
-.page-boutique main {
-  justify-content: center;
-  margin: 0 auto;
-}
-
-.page-boutique main a {
-  color: var(--orange-terracota);
-}
-
-.page-boutique main a:hover {
-  color: #8B3E2F;
-}
-
-.rangée {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
-  align-items: center;
-}
-
 #div-horaire {
+  width: fit-content;
+  height: fit-content;
   display: flex;
   justify-content: center;
   border: 1px solid var(--beige-sable);
@@ -242,7 +241,6 @@ table {
   border-collapse:collapse;
   background-color: var(--beige-sable);
   overflow: hidden;
-  
 }
 
 th, td {
@@ -258,10 +256,7 @@ tr:nth-child(even) {
 }
 
 
-
-
 /* Catalogue */
-
 #grille{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -295,18 +290,13 @@ tr:nth-child(even) {
 }
 
 
-
-
-
-
-
-
-
-
-
-
  /*doit être à la fin*/
 @media (max-width: 600px) {
+  #boites {
+    flex-direction: column;
+    gap: 20px
+  }
+
   #grille {
     grid-template-columns: 1fr;
   }
@@ -332,14 +322,27 @@ tr:nth-child(even) {
     height: auto;
   }
 
-  nav {
-    display: flex;
+  header {
     flex-direction: column;
-    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 800px) {
+  #boites {
+    flex-direction: column;
+    gap: 20px
   }
 
-  nav a {
-    padding: 10px;
+  #grille {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
-}   
+@media (min-width: 800px) and (max-width: 1000px) {
+  #grille {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
