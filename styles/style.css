@@ -255,6 +255,33 @@ tr:nth-child(even) {
   background-color:antiquewhite;
 }
 
+#svgManuel {
+  position: relative;
+  animation: animation 5s infinite;
+}
+
+@keyframes animation {
+  0% {
+    left: 0px;
+    fill: blue;
+  }
+  25% {
+    left: 250px;
+    fill: red;
+  }
+  50% {
+    left: 500px;
+    fill: yellow;
+  }
+  75% {
+    left: 750px;
+    fill: purple;
+  }
+  100% {
+    left: 1000px;
+    fill: red;
+  }
+}
 
 /* Catalogue */
 #grille{
@@ -296,25 +323,48 @@ tr:nth-child(even) {
 }
 
 .collection-paragraphe {
-  height: max-content;
-  width: min-content;
-  min-width: 20vw;
+
+  width: fit-content;
 }
 
 .collection {
   background-color: var(--vert-sage);
-  border-radius: 8px;
-  padding: 8px;
-  width: min-content;
+  border-radius: 10px;
+  padding: 10px;
+  
   justify-content: center;
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  gap: 20px;
+  margin: 10px auto;
+
+}
+
+.collection:hover {
+  animation: changer-couleur 3s infinite;
+}
+
+@keyframes changer-couleur {
+  
+  0% {
+    border: 6px solid var(--vert-sage);
+  }
+  50% {
+    border: 6px solid  var(--orange-terracota);
+  }
+  100% {
+    border: 6px solid var(--vert-sage);
+  }
 }
 
 
 .collection img {
   margin: 0px auto;
   max-width: 100%;
+  width: 200px;
+  height: 200px;
 }
-
 
  /*doit être à la fin*/
 @media (max-width: 600px) {
@@ -353,6 +403,10 @@ tr:nth-child(even) {
     position: sticky;
     top: 0;
     z-index: 1;
+  }
+
+  .collection {
+    flex-direction: column;
   }
 }
 
