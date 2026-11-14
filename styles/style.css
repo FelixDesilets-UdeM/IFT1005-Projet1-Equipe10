@@ -290,6 +290,32 @@ tr:nth-child(even) {
 }
 
 
+/* Collection */
+.page-collection h3 {
+  text-align: unset;
+}
+
+.collection-paragraphe {
+  height: max-content;
+  width: min-content;
+  min-width: 20vw;
+}
+
+.collection {
+  background-color: var(--vert-sage);
+  border-radius: 8px;
+  padding: 8px;
+  width: min-content;
+  justify-content: center;
+}
+
+
+.collection img {
+  margin: 0px auto;
+  max-width: 100%;
+}
+
+
  /*doit être à la fin*/
 @media (max-width: 600px) {
   #boites {
