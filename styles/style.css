@@ -256,30 +256,57 @@ tr:nth-child(even) {
 }
 
 #svgManuel {
-  position: relative;
-  animation: animation 5s infinite;
+  overflow: hidden;
 }
 
-@keyframes animation {
+#svgManuel > svg {
+  position: relative;
+  width: fit-content;
+  animation: déplacementHorizontale 5s infinite;
+  justify-content: center;
+  animation-timing-function: linear;
+}
+
+#svgManuel > svg > path {
+  animation: changerCouleur 5s infinite;
+  stroke: var(--orange-terracota);
+  stroke-width: 5px;
+  fill: var(--beige-sable);
+}
+
+#svgManuel > svg > text {
+  x: 20;
+  y: 50;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+@keyframes déplacementHorizontale {
+  from {
+    left: calc(0vw - 200px);
+  }
+  to {
+    left: calc(100vw + 200px);
+  }
+}
+
+@keyframes changerCouleur {
   0% {
-    left: 0px;
-    fill: blue;
+    stroke: var(--vert-sage);
   }
   25% {
-    left: 250px;
-    fill: red;
+    stroke: var(--orange-terracota);
   }
   50% {
-    left: 500px;
-    fill: yellow;
+    stroke: var(--vert-sage);
   }
   75% {
-    left: 750px;
-    fill: purple;
+    stroke: var(--orange-terracota);
   }
   100% {
-    left: 1000px;
-    fill: red;
+    stroke: var(--vert-sage);
   }
 }
 
@@ -329,9 +356,9 @@ tr:nth-child(even) {
 
 .collection {
   background-color: var(--vert-sage);
+  border: 6px solid var(--vert-sage);
   border-radius: 10px;
   padding: 10px;
-  
   justify-content: center;
   display: flex;
   flex-direction: row;
@@ -342,15 +369,20 @@ tr:nth-child(even) {
 }
 
 .collection:hover {
-  animation: changer-couleur 3s infinite;
+  animation: changer-couleur-bordure 3s infinite;
 }
 
-@keyframes changer-couleur {
-  
+@keyframes changer-couleur-bordure  {
   0% {
     border: 6px solid var(--vert-sage);
   }
+  25% {
+    border: 6px solid  var(--orange-terracota);
+  }
   50% {
+    border: 6px solid var(--vert-sage);
+  }
+  75% {
     border: 6px solid  var(--orange-terracota);
   }
   100% {
@@ -377,9 +409,14 @@ tr:nth-child(even) {
     grid-template-columns: 1fr;
   }
 
+  .boutique-paragraphe {
+    width: fit-content;
+  }
+
   .rangée {
     flex-direction: column;
   }
+
 
   main { 
     padding: 12px;
