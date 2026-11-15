@@ -142,9 +142,11 @@ tr:nth-child(even) {
 .rangée {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  gap: 32px;
+  text-align: center;
+  align-items: center;
   justify-content: center;
+  gap: 32px;
+  margin: 0 auto;
 }
 
 #spacer {
@@ -237,6 +239,9 @@ tr:nth-child(even) {
   transform: translateY(2px);
 }
 
+#image-map {
+  display: block;
+}
 
 /* Boutique */
 .page-boutique section {
@@ -410,7 +415,7 @@ tr:nth-child(even) {
     padding: 12px;
   }*/
 
-  img {
+  .page-catalogue img {
     max-width: 100%;
     height: auto;
   }
