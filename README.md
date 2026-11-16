@@ -8,4 +8,6 @@ Sources:
     Les logos SVG dans la page "boutique" ont été générés via le site https://svgcreator.com/ à partir de jpg trouvé sur les sites liées 
     (https://www.marchecreafolie.com/, https://agrebec.ca/);
 
-Vidéo: Présentation Jonathan Audet : https://youtu.be/b97a6dxV0XE
+Vidéos: 
+  Présentation Jonathan Audet (pages Accueil et catalogue) : https://youtu.be/b97a6dxV0XE
+  Présentation Félix Désilets (pages collection et boutique): https://youtu.be/mf8fL--nhdI
